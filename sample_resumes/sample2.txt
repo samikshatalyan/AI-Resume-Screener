@@ -1,0 +1,7 @@
+﻿Rahul Verma
+Python Developer
+
+Experience: 1 year
+Skills: Python, Flask, REST API, SQL, Git, HTML, CSS
+
+Developed REST APIs in Flask and integrated SQL databases for web applications.

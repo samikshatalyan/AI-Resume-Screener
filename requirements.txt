@@ -1,0 +1,9 @@
+﻿flask
+pdfminer.six
+python-docx
+scikit-learn
+nltk
+joblib
+regex
+pillow
+pytesseract

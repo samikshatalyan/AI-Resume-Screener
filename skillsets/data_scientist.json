@@ -1,0 +1,25 @@
+﻿{
+  "title": "Data Scientist",
+  "required_skills": [
+    "python",
+    "machine learning",
+    "data analysis",
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "statistics",
+    "sql",
+    "scikit-learn",
+    "data visualization"
+  ],
+  "optional_skills": [
+    "deep learning",
+    "tensorflow",
+    "keras",
+    "nlp",
+    "tableau",
+    "power bi",
+    "r programming",
+    "feature engineering"
+  ]
+}

@@ -1,0 +1,19 @@
+﻿{
+  "title": "Python Developer",
+  "required_skills": [
+    "python",
+    "django",
+    "flask",
+    "rest api",
+    "sql",
+    "git"
+  ],
+  "optional_skills": [
+    "docker",
+    "linux",
+    "unit testing",
+    "html",
+    "css",
+    "javascript"
+  ]
+}

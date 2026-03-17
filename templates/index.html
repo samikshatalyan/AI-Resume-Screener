@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AI Resume Screener</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <h1>AI Resume Screener</h1>
+      <p class="tagline">
+        Professional, offline AI-based resume analysis for modern hiring.
+      </p>
+    </header>
+
+    <main class="main">
+      <div class="card fade-in">
+        <form method="post" enctype="multipart/form-data" class="form">
+          <div class="field">
+            <label for="profile">Select Job Role</label>
+            <select name="profile" id="profile">
+              {% for p in profiles %}
+              <option value="{{ p }}">{{ p }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="resume">Upload resume (PDF / DOCX / TXT / Image)</label>
+            <input type="file" name="resume" id="resume" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary wave">Analyze Resume</button>
+        </form>
+
+        {% if result %}
+        <div class="result slide-up">
+          <h2>Result – {{ result.profile }}</h2>
+
+          <div class="score-row">
+            <div class="score-label">Fit Score</div>
+            <div class="score-value">{{ result.fit_score }}%</div>
+            <div class="score-bar">
+              <div class="score-bar-fill" style="width: {{ result.fit_score }}%;"></div>
+            </div>
+          </div>
+
+          {% if result.experience_est_years %}
+          <p><strong>Estimated experience:</strong> {{ result.experience_est_years }} years</p>
+          {% endif %}
+
+          {% if result.ml_prediction %}
+          <p><strong>ML model confidence:</strong> {{ (result.ml_prediction * 100) | round(1) }}%</p>
+          {% endif %}
+
+          <h3>Matched required skills</h3>
+          <ul class="pill-list ok">
+            {% for s in result.matched_required %}
+            <li>{{ s }}</li>
+            {% endfor %}
+          </ul>
+
+          <h3>Missing required skills</h3>
+          <ul class="pill-list warn">
+            {% for s in result.missing_required %}
+            <li>{{ s }}</li>
+            {% endfor %}
+          </ul>
+
+          {% if result.matched_optional %}
+          <h3>Matched optional skills</h3>
+          <ul class="pill-list info">
+            {% for s in result.matched_optional %}
+            <li>{{ s }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </main>
+
+    <footer class="footer">
+      <small>Mini Project • Department of CSE</small>
+    </footer>
+  </div>
+</body>
+</html>

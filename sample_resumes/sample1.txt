@@ -1,0 +1,7 @@
+﻿Priya Sharma
+Data Scientist
+
+Experience: 2 years
+Skills: Python, Pandas, NumPy, SQL, Matplotlib, Statistics, TensorFlow
+
+Worked on multiple data analysis projects using Python, Pandas and visualization with Matplotlib.
